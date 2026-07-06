@@ -1,0 +1,145 @@
+{
+ "lemma_id": "skew_kurtosis_tail",
+ "claim": "P(x >= 1) <= 1/2 over moment class",
+ "params": {
+  "gamma": "0",
+  "kappa": "2",
+  "t": "1"
+ },
+ "objective": {
+  "sense": "sup",
+  "type": "probability"
+ },
+ "constraints": [
+  {
+   "poly": "1",
+   "op": "==",
+   "value": "1"
+  },
+  {
+   "poly": "x",
+   "op": "==",
+   "value": "0"
+  },
+  {
+   "poly": "x**2",
+   "op": "==",
+   "value": "1"
+  },
+  {
+   "poly": "x**3",
+   "op": "==",
+   "value": "0"
+  },
+  {
+   "poly": "x**4",
+   "op": "<=",
+   "value": "2"
+  }
+ ],
+ "dual_multipliers": [
+  "1/4",
+  "1/2",
+  "1/4",
+  "0",
+  "0"
+ ],
+ "q_poly": "x**2/4 + x/2 + 1/4",
+ "bound_value": "1/2",
+ "pieces": [
+  {
+   "role": "event",
+   "domain": {
+    "type": "half_line_ge",
+    "a": "1"
+   },
+   "blocks": [
+    {
+     "multiplier": "1",
+     "basis": [
+      "1",
+      "x - 1",
+      "(x - 1)**2"
+     ],
+     "gram": [
+      [
+       "0",
+       "0",
+       "0"
+      ],
+      [
+       "0",
+       "1/4",
+       "0"
+      ],
+      [
+       "0",
+       "0",
+       "0"
+      ]
+     ]
+    },
+    {
+     "multiplier": "x - 1",
+     "basis": [
+      "1",
+      "x - 1"
+     ],
+     "gram": [
+      [
+       "1",
+       "0"
+      ],
+      [
+       "0",
+       "0"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "role": "support",
+   "domain": {
+    "type": "real_line"
+   },
+   "blocks": [
+    {
+     "multiplier": "1",
+     "basis": [
+      "1",
+      "x",
+      "x**2"
+     ],
+     "gram": [
+      [
+       "1/4",
+       "1/4",
+       "0"
+      ],
+      [
+       "1/4",
+       "1/4",
+       "0"
+      ],
+      [
+       "0",
+       "0",
+       "0"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "status": "CERTIFIED",
+ "provenance": {
+  "solver": "CLARABEL via cvxpy 1.9.2",
+  "git": "e2a6238",
+  "wall_time_s": 0.061,
+  "date": "2026-07-02",
+  "residual": 4.8009374253865644e-12,
+  "den_ladder_rung": 1000,
+  "lambda_source": "rationalized"
+ }
+}

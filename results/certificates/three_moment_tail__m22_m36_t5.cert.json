@@ -1,0 +1,141 @@
+{
+ "lemma_id": "three_moment_tail",
+ "claim": "P(x >= 5) <= 2/55 over moment class",
+ "params": {
+  "m2": "2",
+  "m3": "6",
+  "t": "5"
+ },
+ "objective": {
+  "sense": "sup",
+  "type": "probability"
+ },
+ "constraints": [
+  {
+   "poly": "1",
+   "op": "==",
+   "value": "1"
+  },
+  {
+   "poly": "x",
+   "op": "==",
+   "value": "1"
+  },
+  {
+   "poly": "x**2",
+   "op": "==",
+   "value": "2"
+  },
+  {
+   "poly": "x**3",
+   "op": "==",
+   "value": "6"
+  }
+ ],
+ "dual_multipliers": [
+  "0",
+  "16/605",
+  "-24/605",
+  "9/605"
+ ],
+ "q_poly": "9*x**3/605 - 24*x**2/605 + 16*x/605",
+ "bound_value": "2/55",
+ "pieces": [
+  {
+   "role": "event",
+   "domain": {
+    "type": "half_line_ge",
+    "a": "5"
+   },
+   "blocks": [
+    {
+     "multiplier": "1",
+     "basis": [
+      "1",
+      "x - 5"
+     ],
+     "gram": [
+      [
+       "0",
+       "0"
+      ],
+      [
+       "0",
+       "210479697/1099003675"
+      ]
+     ]
+    },
+    {
+     "multiplier": "x - 5",
+     "basis": [
+      "1",
+      "x - 5"
+     ],
+     "gram": [
+      [
+       "41/55",
+       "-4422156/1099003675"
+      ],
+      [
+       "-4422156/1099003675",
+       "9/605"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "role": "support",
+   "domain": {
+    "type": "half_line_ge",
+    "a": "0"
+   },
+   "blocks": [
+    {
+     "multiplier": "1",
+     "basis": [
+      "1",
+      "x"
+     ],
+     "gram": [
+      [
+       "0",
+       "0"
+      ],
+      [
+       "0",
+       "0"
+      ]
+     ]
+    },
+    {
+     "multiplier": "x",
+     "basis": [
+      "1",
+      "x"
+     ],
+     "gram": [
+      [
+       "16/605",
+       "-12/605"
+      ],
+      [
+       "-12/605",
+       "9/605"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "status": "CERTIFIED",
+ "provenance": {
+  "solver": "CLARABEL via cvxpy 1.9.2",
+  "git": "e2a6238",
+  "wall_time_s": 0.041,
+  "date": "2026-07-02",
+  "residual": 1.1102230246251565e-15,
+  "den_ladder_rung": 1000,
+  "lambda_source": "rationalized"
+ }
+}

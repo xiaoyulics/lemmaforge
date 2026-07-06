@@ -1,0 +1,95 @@
+{
+ "lemma_id": "paley_zygmund",
+ "params": {
+  "m2": "2",
+  "theta": "3/4"
+ },
+ "claim": "P(x >= 3/4) >= 1/17 over {E1=1, Ex=1, Ex2=2}, support [0,oo) (tight PZ; infimum, approached but not attained)",
+ "objective": {
+  "sense": "inf",
+  "type": "probability"
+ },
+ "constraints": [
+  {
+   "poly": "1",
+   "op": "==",
+   "value": "1"
+  },
+  {
+   "poly": "x",
+   "op": "==",
+   "value": "1"
+  },
+  {
+   "poly": "x**2",
+   "op": "==",
+   "value": "2"
+  }
+ ],
+ "dual_multipliers": [
+  "-111/289",
+  "160/289",
+  "-16/289"
+ ],
+ "q_poly": "-16*x**2/289 + 160*x/289 - 111/289",
+ "bound_value": "1/17",
+ "pieces": [
+  {
+   "role": "event",
+   "domain": {
+    "type": "half_line_ge",
+    "a": "3/4"
+   },
+   "blocks": [
+    {
+     "multiplier": "1",
+     "basis": [
+      "x - 5"
+     ],
+     "gram": [
+      [
+       "16/289"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "role": "offevent",
+   "domain": {
+    "type": "interval",
+    "a": "0",
+    "b": "3/4"
+   },
+   "blocks": [
+    {
+     "multiplier": "1",
+     "basis": [
+      "3/4 - x"
+     ],
+     "gram": [
+      [
+       "592/867"
+      ]
+     ]
+    },
+    {
+     "multiplier": "-x**2 + 3*x/4",
+     "basis": [
+      "1"
+     ],
+     "gram": [
+      [
+       "32/51"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "status": "CERTIFIED",
+ "provenance": {
+  "source": "closed form (tight Paley-Zygmund; memo b4_tight_pz)",
+  "date": "2026-07-02"
+ }
+}

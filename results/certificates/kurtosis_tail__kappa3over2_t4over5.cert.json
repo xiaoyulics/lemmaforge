@@ -1,0 +1,115 @@
+{
+ "lemma_id": "kurtosis_tail",
+ "params": {
+  "t": "4/5",
+  "kappa": "3/2"
+ },
+ "objective": {
+  "sense": "sup",
+  "type": "probability"
+ },
+ "constraints": [
+  {
+   "poly": "1",
+   "op": "==",
+   "value": "1"
+  },
+  {
+   "poly": "x",
+   "op": "==",
+   "value": "0"
+  },
+  {
+   "poly": "x**2",
+   "op": "==",
+   "value": "1"
+  },
+  {
+   "poly": "x**4",
+   "op": "<=",
+   "value": "3/2"
+  }
+ ],
+ "provenance": {
+  "source": "closed form (claims L01/L02/L03, regime I)",
+  "date": "2026-07-02"
+ },
+ "status": "CERTIFIED",
+ "claim": "P(x >= 4/5) <= 25/41 over C(3/2) [Regime I]",
+ "dual_multipliers": [
+  "625/1681",
+  "1000/1681",
+  "400/1681",
+  "0"
+ ],
+ "q_poly": "400*x**2/1681 + 1000*x/1681 + 625/1681",
+ "bound_value": "25/41",
+ "pieces": [
+  {
+   "role": "event",
+   "domain": {
+    "type": "half_line_ge",
+    "a": "4/5"
+   },
+   "blocks": [
+    {
+     "multiplier": "1",
+     "basis": [
+      "x - 4/5"
+     ],
+     "gram": [
+      [
+       "400/1681"
+      ]
+     ]
+    },
+    {
+     "multiplier": "x - 4/5",
+     "basis": [
+      "1"
+     ],
+     "gram": [
+      [
+       "40/41"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "role": "support",
+   "domain": {
+    "type": "real_line"
+   },
+   "blocks": [
+    {
+     "multiplier": "1",
+     "basis": [
+      "1",
+      "x"
+     ],
+     "gram": [
+      [
+       "625/1681",
+       "500/1681"
+      ],
+      [
+       "500/1681",
+       "400/1681"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "extremal": {
+  "atoms": [
+   "4/5",
+   "-5/4"
+  ],
+  "weights": [
+   "25/41",
+   "16/41"
+  ]
+ }
+}

@@ -1,0 +1,86 @@
+{
+ "lemma_id": "markov",
+ "params": {
+  "t": "5"
+ },
+ "claim": "P(x >= 5) <= 1/5 over {E1=1, Ex=1}, support [0,oo)",
+ "objective": {
+  "sense": "sup",
+  "type": "probability"
+ },
+ "constraints": [
+  {
+   "poly": "1",
+   "op": "==",
+   "value": "1"
+  },
+  {
+   "poly": "x",
+   "op": "==",
+   "value": "1"
+  }
+ ],
+ "dual_multipliers": [
+  "0",
+  "1/5"
+ ],
+ "q_poly": "x/5",
+ "bound_value": "1/5",
+ "pieces": [
+  {
+   "role": "event",
+   "domain": {
+    "type": "half_line_ge",
+    "a": "5"
+   },
+   "blocks": [
+    {
+     "multiplier": "x - 5",
+     "basis": [
+      "1"
+     ],
+     "gram": [
+      [
+       "1/5"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "role": "support",
+   "domain": {
+    "type": "half_line_ge",
+    "a": "0"
+   },
+   "blocks": [
+    {
+     "multiplier": "x",
+     "basis": [
+      "1"
+     ],
+     "gram": [
+      [
+       "1/5"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "extremal": {
+  "atoms": [
+   "0",
+   "5"
+  ],
+  "weights": [
+   "4/5",
+   "1/5"
+  ]
+ },
+ "status": "CERTIFIED",
+ "provenance": {
+  "source": "closed form (Markov, degree-1 exact)",
+  "date": "2026-07-02"
+ }
+}

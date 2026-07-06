@@ -1,0 +1,109 @@
+{
+ "lemma_id": "cantelli",
+ "params": {
+  "sigma2": "1",
+  "t": "2"
+ },
+ "claim": "P(x >= 2) <= 1/5 over {E1=1, Ex=0, Ex2=1}, support R",
+ "objective": {
+  "sense": "sup",
+  "type": "probability"
+ },
+ "constraints": [
+  {
+   "poly": "1",
+   "op": "==",
+   "value": "1"
+  },
+  {
+   "poly": "x",
+   "op": "==",
+   "value": "0"
+  },
+  {
+   "poly": "x**2",
+   "op": "==",
+   "value": "1"
+  }
+ ],
+ "dual_multipliers": [
+  "1/25",
+  "4/25",
+  "4/25"
+ ],
+ "q_poly": "4*x**2/25 + 4*x/25 + 1/25",
+ "bound_value": "1/5",
+ "pieces": [
+  {
+   "role": "event",
+   "domain": {
+    "type": "half_line_ge",
+    "a": "2"
+   },
+   "blocks": [
+    {
+     "multiplier": "1",
+     "basis": [
+      "x - 2"
+     ],
+     "gram": [
+      [
+       "4/25"
+      ]
+     ]
+    },
+    {
+     "multiplier": "x - 2",
+     "basis": [
+      "1"
+     ],
+     "gram": [
+      [
+       "4/5"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "role": "support",
+   "domain": {
+    "type": "real_line"
+   },
+   "blocks": [
+    {
+     "multiplier": "1",
+     "basis": [
+      "1",
+      "x"
+     ],
+     "gram": [
+      [
+       "1/25",
+       "2/25"
+      ],
+      [
+       "2/25",
+       "4/25"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "extremal": {
+  "atoms": [
+   "2",
+   "-1/2"
+  ],
+  "weights": [
+   "1/5",
+   "4/5"
+  ]
+ },
+ "status": "CERTIFIED",
+ "provenance": {
+  "source": "closed form (Cantelli / PLAN Appendix A)",
+  "date": "2026-07-02"
+ }
+}

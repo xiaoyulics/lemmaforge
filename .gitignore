@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+kb/paper/build/
+*.aux
+*.log
+*.out
+*.synctex.gz
+
+arxiv_build/
+LemmaForge_arxiv_submission.zip
+*.pdf

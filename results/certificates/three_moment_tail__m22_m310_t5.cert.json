@@ -1,0 +1,141 @@
+{
+ "lemma_id": "three_moment_tail",
+ "claim": "P(x >= 5) <= 1/17 over moment class",
+ "params": {
+  "m2": "2",
+  "m3": "10",
+  "t": "5"
+ },
+ "objective": {
+  "sense": "sup",
+  "type": "probability"
+ },
+ "constraints": [
+  {
+   "poly": "1",
+   "op": "==",
+   "value": "1"
+  },
+  {
+   "poly": "x",
+   "op": "==",
+   "value": "1"
+  },
+  {
+   "poly": "x**2",
+   "op": "==",
+   "value": "2"
+  },
+  {
+   "poly": "x**3",
+   "op": "==",
+   "value": "10"
+  }
+ ],
+ "dual_multipliers": [
+  "9/289",
+  "-24/289",
+  "16/289",
+  "0"
+ ],
+ "q_poly": "16*x**2/289 - 24*x/289 + 9/289",
+ "bound_value": "1/17",
+ "pieces": [
+  {
+   "role": "event",
+   "domain": {
+    "type": "half_line_ge",
+    "a": "5"
+   },
+   "blocks": [
+    {
+     "multiplier": "1",
+     "basis": [
+      "1",
+      "x - 5"
+     ],
+     "gram": [
+      [
+       "0",
+       "0"
+      ],
+      [
+       "0",
+       "16/289"
+      ]
+     ]
+    },
+    {
+     "multiplier": "x - 5",
+     "basis": [
+      "1",
+      "x - 5"
+     ],
+     "gram": [
+      [
+       "8/17",
+       "0"
+      ],
+      [
+       "0",
+       "0"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "role": "support",
+   "domain": {
+    "type": "half_line_ge",
+    "a": "0"
+   },
+   "blocks": [
+    {
+     "multiplier": "1",
+     "basis": [
+      "1",
+      "x"
+     ],
+     "gram": [
+      [
+       "9/289",
+       "-12/289"
+      ],
+      [
+       "-12/289",
+       "16/289"
+      ]
+     ]
+    },
+    {
+     "multiplier": "x",
+     "basis": [
+      "1",
+      "x"
+     ],
+     "gram": [
+      [
+       "0",
+       "0"
+      ],
+      [
+       "0",
+       "0"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "status": "CERTIFIED",
+ "provenance": {
+  "solver": "CLARABEL via cvxpy 1.9.2",
+  "git": "e2a6238",
+  "wall_time_s": 0.046,
+  "date": "2026-07-02",
+  "residual": 5.6099574191543376e-14,
+  "den_ladder_rung": 1000,
+  "lambda_source": "rationalized"
+ }
+}

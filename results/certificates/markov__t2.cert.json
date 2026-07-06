@@ -1,0 +1,86 @@
+{
+ "lemma_id": "markov",
+ "params": {
+  "t": "2"
+ },
+ "claim": "P(x >= 2) <= 1/2 over {E1=1, Ex=1}, support [0,oo)",
+ "objective": {
+  "sense": "sup",
+  "type": "probability"
+ },
+ "constraints": [
+  {
+   "poly": "1",
+   "op": "==",
+   "value": "1"
+  },
+  {
+   "poly": "x",
+   "op": "==",
+   "value": "1"
+  }
+ ],
+ "dual_multipliers": [
+  "0",
+  "1/2"
+ ],
+ "q_poly": "x/2",
+ "bound_value": "1/2",
+ "pieces": [
+  {
+   "role": "event",
+   "domain": {
+    "type": "half_line_ge",
+    "a": "2"
+   },
+   "blocks": [
+    {
+     "multiplier": "x - 2",
+     "basis": [
+      "1"
+     ],
+     "gram": [
+      [
+       "1/2"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "role": "support",
+   "domain": {
+    "type": "half_line_ge",
+    "a": "0"
+   },
+   "blocks": [
+    {
+     "multiplier": "x",
+     "basis": [
+      "1"
+     ],
+     "gram": [
+      [
+       "1/2"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "extremal": {
+  "atoms": [
+   "0",
+   "2"
+  ],
+  "weights": [
+   "1/2",
+   "1/2"
+  ]
+ },
+ "status": "CERTIFIED",
+ "provenance": {
+  "source": "closed form (Markov, degree-1 exact)",
+  "date": "2026-07-02"
+ }
+}

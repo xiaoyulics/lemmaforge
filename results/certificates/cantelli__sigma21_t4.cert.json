@@ -1,0 +1,109 @@
+{
+ "lemma_id": "cantelli",
+ "params": {
+  "sigma2": "1",
+  "t": "4"
+ },
+ "claim": "P(x >= 4) <= 1/17 over {E1=1, Ex=0, Ex2=1}, support R",
+ "objective": {
+  "sense": "sup",
+  "type": "probability"
+ },
+ "constraints": [
+  {
+   "poly": "1",
+   "op": "==",
+   "value": "1"
+  },
+  {
+   "poly": "x",
+   "op": "==",
+   "value": "0"
+  },
+  {
+   "poly": "x**2",
+   "op": "==",
+   "value": "1"
+  }
+ ],
+ "dual_multipliers": [
+  "1/289",
+  "8/289",
+  "16/289"
+ ],
+ "q_poly": "16*x**2/289 + 8*x/289 + 1/289",
+ "bound_value": "1/17",
+ "pieces": [
+  {
+   "role": "event",
+   "domain": {
+    "type": "half_line_ge",
+    "a": "4"
+   },
+   "blocks": [
+    {
+     "multiplier": "1",
+     "basis": [
+      "x - 4"
+     ],
+     "gram": [
+      [
+       "16/289"
+      ]
+     ]
+    },
+    {
+     "multiplier": "x - 4",
+     "basis": [
+      "1"
+     ],
+     "gram": [
+      [
+       "8/17"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "role": "support",
+   "domain": {
+    "type": "real_line"
+   },
+   "blocks": [
+    {
+     "multiplier": "1",
+     "basis": [
+      "1",
+      "x"
+     ],
+     "gram": [
+      [
+       "1/289",
+       "4/289"
+      ],
+      [
+       "4/289",
+       "16/289"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "extremal": {
+  "atoms": [
+   "4",
+   "-1/4"
+  ],
+  "weights": [
+   "1/17",
+   "16/17"
+  ]
+ },
+ "status": "CERTIFIED",
+ "provenance": {
+  "source": "closed form (Cantelli / PLAN Appendix A)",
+  "date": "2026-07-02"
+ }
+}

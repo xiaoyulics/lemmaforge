@@ -1,0 +1,129 @@
+{
+ "lemma_id": "kurtosis_tail",
+ "params": {
+  "t": "1/2",
+  "kappa": "5/4"
+ },
+ "objective": {
+  "sense": "sup",
+  "type": "probability"
+ },
+ "constraints": [
+  {
+   "poly": "1",
+   "op": "==",
+   "value": "1"
+  },
+  {
+   "poly": "x",
+   "op": "==",
+   "value": "0"
+  },
+  {
+   "poly": "x**2",
+   "op": "==",
+   "value": "1"
+  },
+  {
+   "poly": "x**4",
+   "op": "<=",
+   "value": "5/4"
+  }
+ ],
+ "provenance": {
+  "source": "closed form (claims L01/L02/L03, regime IIIa)",
+  "date": "2026-07-02"
+ },
+ "status": "CERTIFIED",
+ "claim": "P(x >= 1/2) <= sqrt(17)/34 + 1/2 over C(5/4) [Regime IIIa plateau]",
+ "dual_multipliers": [
+  "57*sqrt(17)/578 + 1/2",
+  "32*sqrt(17)/289",
+  "-40*sqrt(17)/289",
+  "16*sqrt(17)/289"
+ ],
+ "q_poly": "16*sqrt(17)*x**4/289 - 40*sqrt(17)*x**2/289 + 32*sqrt(17)*x/289 + 57*sqrt(17)/578 + 1/2",
+ "bound_value": "sqrt(17)/34 + 1/2",
+ "pieces": [
+  {
+   "role": "event",
+   "domain": {
+    "type": "half_line_ge",
+    "a": "1/2"
+   },
+   "blocks": [
+    {
+     "multiplier": "1",
+     "basis": [
+      "x**2 - sqrt(17)*x/4 - x/4 - 1/8 + sqrt(17)/8",
+      "x - sqrt(17)/4 + 1/4"
+     ],
+     "gram": [
+      [
+       "16*sqrt(17)/289",
+       "0"
+      ],
+      [
+       "0",
+       "-2/17 + 14*sqrt(17)/289"
+      ]
+     ]
+    },
+    {
+     "multiplier": "x - 1/2",
+     "basis": [
+      "x - sqrt(17)/4 + 1/4"
+     ],
+     "gram": [
+      [
+       "8*sqrt(17)/289 + 8/17"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "role": "support",
+   "domain": {
+    "type": "real_line"
+   },
+   "blocks": [
+    {
+     "multiplier": "1",
+     "basis": [
+      "1",
+      "x",
+      "x^2"
+     ],
+     "gram": [
+      [
+       "57*sqrt(17)/578 + 1/2",
+       "16*sqrt(17)/289",
+       "-18*sqrt(17)/289 - 2/17"
+      ],
+      [
+       "16*sqrt(17)/289",
+       "4/17 - 4*sqrt(17)/289",
+       "0"
+      ],
+      [
+       "-18*sqrt(17)/289 - 2/17",
+       "0",
+       "16*sqrt(17)/289"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "extremal": {
+  "atoms": [
+   "-1/4 + sqrt(17)/4",
+   "-sqrt(17)/4 - 1/4"
+  ],
+  "weights": [
+   "sqrt(17)/34 + 1/2",
+   "1/2 - sqrt(17)/34"
+  ]
+ }
+}

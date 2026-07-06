@@ -1,0 +1,137 @@
+{
+ "lemma_id": "kurtosis_tail",
+ "params": {
+  "t": "4",
+  "kappa": "5/4"
+ },
+ "objective": {
+  "sense": "sup",
+  "type": "probability"
+ },
+ "constraints": [
+  {
+   "poly": "1",
+   "op": "==",
+   "value": "1"
+  },
+  {
+   "poly": "x",
+   "op": "==",
+   "value": "0"
+  },
+  {
+   "poly": "x**2",
+   "op": "==",
+   "value": "1"
+  },
+  {
+   "poly": "x**4",
+   "op": "<=",
+   "value": "5/4"
+  }
+ ],
+ "provenance": {
+  "source": "closed form (claims L01/L02/L03, regime II)",
+  "date": "2026-07-02"
+ },
+ "status": "CERTIFIED",
+ "claim": "P(x >= 4) <= 1/901 over C(5/4) [Regime II]",
+ "dual_multipliers": [
+  "3481/811801",
+  "0",
+  "-7080/811801",
+  "3600/811801"
+ ],
+ "q_poly": "3600*x**4/811801 - 7080*x**2/811801 + 3481/811801",
+ "bound_value": "1/901",
+ "pieces": [
+  {
+   "role": "event",
+   "domain": {
+    "type": "half_line_ge",
+    "a": "4"
+   },
+   "blocks": [
+    {
+     "multiplier": "1",
+     "basis": [
+      "x - 4",
+      "x**2 - 8*x + 16"
+     ],
+     "gram": [
+      [
+       "338520/811801",
+       "0"
+      ],
+      [
+       "0",
+       "3600/811801"
+      ]
+     ]
+    },
+    {
+     "multiplier": "x - 4",
+     "basis": [
+      "1",
+      "x - 4"
+     ],
+     "gram": [
+      [
+       "960/901",
+       "0"
+      ],
+      [
+       "0",
+       "57600/811801"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "role": "support",
+   "domain": {
+    "type": "real_line"
+   },
+   "blocks": [
+    {
+     "multiplier": "1",
+     "basis": [
+      "1",
+      "x",
+      "x^2"
+     ],
+     "gram": [
+      [
+       "3481/811801",
+       "0",
+       "-3540/811801"
+      ],
+      [
+       "0",
+       "0",
+       "0"
+      ],
+      [
+       "-3540/811801",
+       "0",
+       "3600/811801"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "extremal": {
+  "atoms": [
+   "4",
+   "sqrt(885)/30",
+   "-sqrt(885)/30"
+  ],
+  "weights": [
+   "1/901",
+   "450/901 - 4*sqrt(885)/53159",
+   "4*sqrt(885)/53159 + 450/901"
+  ]
+ }
+}

@@ -1,0 +1,145 @@
+{
+ "lemma_id": "skew_kurtosis_tail",
+ "claim": "P(x >= 2) <= 1/6 over moment class",
+ "params": {
+  "gamma": "1",
+  "kappa": "3",
+  "t": "2"
+ },
+ "objective": {
+  "sense": "sup",
+  "type": "probability"
+ },
+ "constraints": [
+  {
+   "poly": "1",
+   "op": "==",
+   "value": "1"
+  },
+  {
+   "poly": "x",
+   "op": "==",
+   "value": "0"
+  },
+  {
+   "poly": "x**2",
+   "op": "==",
+   "value": "1"
+  },
+  {
+   "poly": "x**3",
+   "op": "==",
+   "value": "1"
+  },
+  {
+   "poly": "x**4",
+   "op": "<=",
+   "value": "3"
+  }
+ ],
+ "dual_multipliers": [
+  "0",
+  "0",
+  "1/36",
+  "1/18",
+  "1/36"
+ ],
+ "q_poly": "x**4/36 + x**3/18 + x**2/36",
+ "bound_value": "1/6",
+ "pieces": [
+  {
+   "role": "event",
+   "domain": {
+    "type": "half_line_ge",
+    "a": "2"
+   },
+   "blocks": [
+    {
+     "multiplier": "1",
+     "basis": [
+      "1",
+      "x - 2",
+      "(x - 2)**2"
+     ],
+     "gram": [
+      [
+       "0",
+       "0",
+       "0"
+      ],
+      [
+       "0",
+       "139/412",
+       "-17744/1139775"
+      ],
+      [
+       "0",
+       "-17744/1139775",
+       "1/36"
+      ]
+     ]
+    },
+    {
+     "multiplier": "x - 2",
+     "basis": [
+      "1",
+      "x - 2"
+     ],
+     "gram": [
+      [
+       "5/3",
+       "320/927"
+      ],
+      [
+       "320/927",
+       "2112553/6838650"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "role": "support",
+   "domain": {
+    "type": "real_line"
+   },
+   "blocks": [
+    {
+     "multiplier": "1",
+     "basis": [
+      "1",
+      "x",
+      "x**2"
+     ],
+     "gram": [
+      [
+       "0",
+       "0",
+       "0"
+      ],
+      [
+       "0",
+       "1/36",
+       "1/36"
+      ],
+      [
+       "0",
+       "1/36",
+       "1/36"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "status": "CERTIFIED",
+ "provenance": {
+  "solver": "CLARABEL via cvxpy 1.9.2",
+  "git": "e2a6238",
+  "wall_time_s": 0.083,
+  "date": "2026-07-02",
+  "residual": 1.6755298638966122e-15,
+  "den_ladder_rung": 1000,
+  "lambda_source": "rationalized"
+ }
+}
