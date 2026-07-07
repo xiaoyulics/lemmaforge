@@ -4,7 +4,7 @@ Companion artifact for the paper
 
 > **The Exact Worst-Case Tail Probability under Bounded Kurtosis**<br>
 > Xiaoyu Li, Andi Han, Jiaojiao Jiang, Junbin Gao<br>
-> Paper Link: TBD
+> Paper Link: https://arxiv.org/abs/2607.05226
 
 The paper computes, exactly and for every parameter value, the worst-case tail probability
 
@@ -78,10 +78,12 @@ certification is data, not something to hide.
 
 ```bibtex
 @misc{lemmaforge2026,
-  author = {Li, Xiaoyu and Han, Andi and Jiang, Jiaojiao and Gao, Junbin},
-  title  = {The Exact Worst-Case Tail Probability under Bounded Kurtosis},
-  year   = {2026},
-  note   = {arXiv preprint; identifier to appear},
+  author       = {Li, Xiaoyu and Han, Andi and Jiang, Jiaojiao and Gao, Junbin},
+  title        = {The Exact Worst-Case Tail Probability under Bounded Kurtosis},
+  year         = {2026},
+  eprint       = {2607.05226},
+  archivePrefix = {arXiv},
+  primaryClass = {math.PR},
 }
 ```
 
