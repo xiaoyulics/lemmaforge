@@ -78,12 +78,13 @@ certification is data, not something to hide.
 
 ```bibtex
 @misc{lemmaforge2026,
-  author       = {Li, Xiaoyu and Han, Andi and Jiang, Jiaojiao and Gao, Junbin},
-  title        = {The Exact Worst-Case Tail Probability under Bounded Kurtosis},
-  year         = {2026},
-  eprint       = {2607.05226},
+  title         = {The Exact Worst-Case Tail Probability under Bounded Kurtosis},
+  author        = {Xiaoyu Li and Andi Han and Jiaojiao Jiang and Junbin Gao},
+  year          = {2026},
+  eprint        = {2607.05226},
   archivePrefix = {arXiv},
-  primaryClass = {math.PR},
+  primaryClass  = {math.PR},
+  url           = {https://arxiv.org/abs/2607.05226},
 }
 ```
 
